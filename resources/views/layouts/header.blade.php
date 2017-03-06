@@ -30,7 +30,7 @@
 @endif
 <header id="header" class="header">
 	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-header">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -38,7 +38,7 @@
 		<a class="navbar-brand logo-page" href="#"><img src="http://i.imgur.com/qwR1IG9.png" alt="MIX-Shop" class="img-responsive"></a>
 	</div>
 	<div>
-	<nav class="navbar-collapse collapse">
+	<nav class="navbar-collapse collapse nav-header">
 		<ul class="nav navbar-nav">
 			@if(Auth::check())
 			<li class="user-avatar-container dropdown">
@@ -97,7 +97,7 @@
 	<div class="search-form-container">
 		@include('layouts.search-form')
 	</div>
-    <ul class="nav nav-justified bottom-nav navbar-collapse collapse">
+    <ul class="nav nav-justified bottom-nav navbar-collapse collapse nav-header">
 		<li class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">nữ
 			</a>

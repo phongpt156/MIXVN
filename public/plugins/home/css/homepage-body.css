@@ -1,3 +1,27 @@
+.mix-container {
+	background-color: #212121;
+}
 .homepage-body {
     margin-top: 98px;
 }
+
+/* homepage main */
+.homepage-aside {
+	padding-top: 60px;
+}
+.collection-container {
+	background-color: #242323;
+}
+.collection-list-item {
+	width: 322px;
+	padding: 0;
+}
+.collection-item a {
+	text-align: center;
+	padding: 15px !important;
+}
+.collection-item img {
+	width: 290px;
+	height: 90px;
+}
+/* end homepage main */

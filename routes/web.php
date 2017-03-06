@@ -24,6 +24,9 @@ Route::group(['prefix' => 'user'], function () {
 	Route::post('login', 'Front\UserController@LoginUser')->name('login-user');
 });
 
+Route::group(['prefix' => 'collection'], function () {
+	Route::get('all', 'Front\CollectionController@GetCollections');
+});
 Route::get('test', 'Front\UserController@CheckExistUserPhoneNumber');
 Route::get('add-user-by-phonenumber', 'Front\UserController@AddUserByPhoneNumber');
 

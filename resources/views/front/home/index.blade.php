@@ -16,7 +16,7 @@
 	@include('layouts.header')
 	<div class="homepage-body">
 		<div class="slide-container">
-			<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:540px;overflow:hidden;visibility:hidden;">
+			<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:440px;overflow:hidden;visibility:hidden;">
 	        	<!-- Loading Screen -->
 		        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
 		            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;">
@@ -24,7 +24,7 @@
 		            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;">
 		            </div>
 		        </div>
-		        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:540px;overflow:hidden;">
+		        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:440px;overflow:hidden;">
 		            <div>
 		                <a href="" title=""><img data-u="image" src="https://s17.postimg.org/xdtdgrevj/bener_1.jpg" /></a>
 		            </div>
@@ -45,6 +45,27 @@
 		        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:8px;width:40px;height:58px;" data-autocenter="2"></span>
 		        <span data-u="arrowright" class="jssora22r" style="top:0px;right:8px;width:40px;height:58px;" data-autocenter="2"></span>
 		    </div>
+		</div>
+		<div class="homepage-main-container">
+			<div class="homepage-main">
+				<aside class="homepage-aside">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collection-list-item">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+				    	</button>
+						<div class="collection-container">
+							<ul class="navbar-collapse collapse collection-list-item nav nav-bar">
+								@include('front.collection.list-collection', ['collections' => $collections])
+							</ul>
+						</div>
+					</div>
+				</aside>
+				<div class="product-show">
+					
+				</div>
+			</div>
 		</div>
 	</div>
 	<script type="text/javascript" charset="utf-8">

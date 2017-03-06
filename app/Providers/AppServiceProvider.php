@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use App\BLL\Front\CategoryBLL;
 use App\BLL\Front\FeatureDefaultValueBLL;
+use App\BLL\Front\CollectionBLL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,7 +27,8 @@ class AppServiceProvider extends ServiceProvider
             $color_default_values = FeatureDefaultValueBLL::GetFeatureDefaultValues(1);
             $material_default_values = FeatureDefaultValueBLL::GetFeatureDefaultValues(2);
             $pattern_default_values = FeatureDefaultValueBLL::GetFeatureDefaultValues(3);
-            $data = compact(['female_cate', 'male_cate', 'color_default_values', 'material_default_values', 'pattern_default_values']);
+            $collections = CollectionBLL::PaginateCollections(11);
+            $data = compact(['female_cate', 'male_cate', 'color_default_values', 'material_default_values', 'pattern_default_values', 'collections']);
             return $view->with($data);
         });
     }

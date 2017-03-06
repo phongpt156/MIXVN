@@ -25,7 +25,7 @@
 	</style>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid mix-container">
     	@yield('content')
 	</div>
 </body>

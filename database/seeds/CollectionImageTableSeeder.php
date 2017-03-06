@@ -16,7 +16,7 @@ class CollectionImageTableSeeder extends Seeder
         DB::table('collection_image')->truncate();
         for($i = 0; $i < 50; $i ++) {
         	$collection_image = [
-        		'name' =>$faker->imageUrl($width = 240, $height = 80),
+        		'name' =>$faker->imageUrl($width = 290, $height = 90),
         		'alt' => $faker->word,
         		'description' => $faker->realText($maxNbChars = 200, $indexSize = 1),
         		'collection_id' => DB::table('collection')->get()->random()->id
