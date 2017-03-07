@@ -18,9 +18,9 @@ class CreateSupplierTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->string('phone_number');
-            $table->time('open_time');
-            $table->time('close_time');
+            $table->string('phone_number')->nullable();
+            $table->time('open_time')->nullable();
+            $table->time('close_time')->nullable();
             $table->timestamps();
         });
     }

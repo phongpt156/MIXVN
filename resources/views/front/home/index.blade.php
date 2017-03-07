@@ -47,9 +47,9 @@
 		    </div>
 		</div>
 		<div class="homepage-main-container">
-			<div class="homepage-main">
+			<div class="homepage-main clearfix">
 				<aside class="homepage-aside">
-					<div class="navbar-header">
+					<div class="nav navbar-nav">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collection-list-item">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -57,13 +57,32 @@
 				    	</button>
 						<div class="collection-container">
 							<ul class="navbar-collapse collapse collection-list-item nav nav-bar">
-								@include('front.collection.list-collection', ['collections' => $collections])
+								@include('front.collection.collection-list', ['collections' => $collections])
 							</ul>
 						</div>
 					</div>
 				</aside>
 				<div class="product-show">
-					
+					<div class="product-container">
+						<div class="product-navigation-container clearfix">
+							<div class="product-navigation">
+								<div class="triangle-left">
+								
+								</div>
+								<ul class="nav navbar-nav">
+									<li class="active product-navigation-item"><a href="javascript:void(0)" title=""><p>Mới nhất</p></a></li>
+									<li class="product-navigation-item"><a href="javascript:void(0)" title=""><p>Thích nhiều nhất</p></a></li>
+									<li class="product-navigation-item"><a href="javascript:void(0)" title=""><p>Sale</p></a></li>
+									<li class="product-navigation-item"><a href="javascript:void(0)" title=""><p>Xu hướng</p></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="product-list-item-container">
+							<ul class="product-list-item clearfix">
+								@include('front.product.homepage-product-list', ['products' => $products])
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

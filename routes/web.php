@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.home.index');
-});
+Route::get('/', 'Front\HomeController@Index');
 
 Route::group(['prefix' => 'user'], function () {
 	Route::get('auth/facebook', 'Front\UserController@RedirectToProvider');
@@ -26,6 +24,12 @@ Route::group(['prefix' => 'user'], function () {
 
 Route::group(['prefix' => 'collection'], function () {
 	Route::get('all', 'Front\CollectionController@GetCollections');
+});
+Route::group(['prefix' => 'product'], function () {
+	Route::get('newest-product', 'Front\ProductController@GetNewestProducts');
+	Route::get('mostlike-product', 'Front\ProductController@GetMostLikeProducts');
+	Route::get('discount-product', 'Front\ProductController@GetDiscountProducts');
+	Route::get('tendency-product', 'Front\ProductController@GetTendencyProducts');
 });
 Route::get('test', 'Front\UserController@CheckExistUserPhoneNumber');
 Route::get('add-user-by-phonenumber', 'Front\UserController@AddUserByPhoneNumber');

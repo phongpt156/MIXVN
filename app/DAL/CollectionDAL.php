@@ -18,7 +18,7 @@ class CollectionDAL
 
 	public static function PaginateCollections($number = 11)
 	{
-		$collections = CollectionDAL::QueryCollections()->paginate($number);
+		$collections = CollectionDAL::QueryCollections()->orderBy('c.created_at', 'desc')->paginate($number);
 		return $collections->withPath('collection/all');
 	}
 }

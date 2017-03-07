@@ -1,27 +1,134 @@
 .mix-container {
-	background-color: #212121;
+	background-color: #1d1c1c;
 }
 .homepage-body {
     margin-top: 98px;
 }
 
-/* homepage main */
+/* collecion aside */
 .homepage-aside {
-	padding-top: 60px;
+	padding-top: 90px;
+	float: left;
 }
 .collection-container {
 	background-color: #242323;
 }
 .collection-list-item {
-	width: 322px;
+	width: 320px;
 	padding: 0;
 }
 .collection-item a {
 	text-align: center;
 	padding: 15px !important;
 }
+.collection-item a:hover {
+	opacity: 0.66;
+}
 .collection-item img {
 	width: 290px;
 	height: 90px;
 }
-/* end homepage main */
+/* end collection aside */
+
+/* product navigation*/
+.product-show {
+	width: calc(100% - 322px);
+	padding: 20px 0 0 5px;
+	float: left;
+}
+.product-navigation {
+	position: relative;
+	font-size: 0;
+	float: right;
+}
+.triangle-left {
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: -35px;
+	display: inline-block;
+	border-top: 50px solid transparent;
+	border-right: 35px solid #242323;
+}
+.product-navigation > .nav {
+	margin: 0;
+	background-color: #242323;
+}
+.product-navigation-item > a {
+	text-transform: uppercase;
+	padding: 15px !important;
+	font-size: 14px;
+	color: white;
+}
+.product-navigation-item > a > p {
+	margin: 0;
+	height: 20px;
+	display: inline-block;
+}
+.product-navigation-item:hover > a > p, .product-navigation-item.active > a > p{
+	border-bottom: 2px solid #434947;
+}
+/* end product navigation */
+
+/* product item */
+.product-list-item-container {
+	overflow: auto;
+	margin-top: 20px;
+	height: 1320px;
+}
+.product-list-item {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.product-item {
+	display: inline-block;
+}
+.product-card {
+	padding: 4.5px;
+}
+.product-image-container {
+	text-align: center;
+}
+.product-image {
+	width: 150px;
+	height: 200px;
+	display: inline-block;
+}
+.product-image > img {
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+.product-info {
+	width: 100%;
+	height: 80px;
+}
+/* end product item */
+@media (min-width: 1200px) {
+	.product-navigation-item > a {
+		padding-left: 30px !important;
+		padding-right: 30px !important;
+	}
+}
+@media (max-width: 768px) {
+	.homepage-aside, .product-show {
+		float: none;
+	}
+	.product-show {
+		width: 100%;
+	}
+	.homepage-aside > .nav {
+		text-align: center;
+	}
+	.product-navigation-item {
+		float: left;
+	}
+	.collection-container {
+		display: inline-block;
+	}
+}
+/* end product */

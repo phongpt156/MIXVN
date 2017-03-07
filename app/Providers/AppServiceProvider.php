@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 use App\BLL\Front\CategoryBLL;
 use App\BLL\Front\FeatureDefaultValueBLL;
 use App\BLL\Front\CollectionBLL;
+use App\BLL\Front\ProductBLL;
 
 class AppServiceProvider extends ServiceProvider
 {
