@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/homepage-body.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/slide.css') }}"/>
 <script src="{{ asset('plugins/home/js/header.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('plugins/home/js/homepage.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/home/js/jssor.slider-22.2.10.min.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/home/js/slide.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/jquery/jquery.validate.min.js') }}" type="text/javascript" charset="utf-8"></script>
@@ -70,10 +71,10 @@
 								
 								</div>
 								<ul class="nav navbar-nav">
-									<li class="active product-navigation-item"><a href="javascript:void(0)" title=""><p>Mới nhất</p></a></li>
-									<li class="product-navigation-item"><a href="javascript:void(0)" title=""><p>Thích nhiều nhất</p></a></li>
-									<li class="product-navigation-item"><a href="javascript:void(0)" title=""><p>Sale</p></a></li>
-									<li class="product-navigation-item"><a href="javascript:void(0)" title=""><p>Xu hướng</p></a></li>
+									<li class="active product-navigation-item"><a href="javascript:void(0)" title="" product-type="newest"><p>Mới nhất</p></a></li>
+									<li class="product-navigation-item"><a href="javascript:void(0)" title="" product-type="mostlike"><p>Thích nhiều nhất</p></a></li>
+									<li class="product-navigation-item"><a href="javascript:void(0)" title="" product-type="discount"><p>Sale</p></a></li>
+									<li class="product-navigation-item"><a href="javascript:void(0)" title="" product-type="tendency"><p>Xu hướng</p></a></li>
 								</ul>
 							</div>
 						</div>

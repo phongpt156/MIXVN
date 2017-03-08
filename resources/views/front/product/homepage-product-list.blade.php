@@ -6,9 +6,30 @@
 				<div class="product-image">
 					<img src="{{ $value->p_i_name }}" alt="">
 				</div>
+				<div class="user-product-action">
+					<ul class="row">
+						<li class="col-xs-4"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
+						<li class="col-xs-4"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/O7whI4a.png" alt=""></a></li>
+						<li class="col-xs-4"><a href="javascript:void(0)" title=""><img src="https://s10.postimg.org/eaem2xss9/ghim.png" alt=""></a></li>
+					</ul>
+				</div>
 			</div>
-			<div class="product-info">
-				
+			<div class="product-info clearfix">
+				<div class="product-name">
+					<a href="" title="">{{ $value->p_name }}</a>
+				</div>
+				<div class="supplier-name">
+					<a href="" title="">{{ $value->s_name }}</a>
+				</div>
+				<div class="product-info-footer clearfix">
+					<div class="product-price">
+						<a href="" title="">{{ $value->p_price }}</a>
+					</div>
+					<div class="product-sum-like">
+						{{ $value->p_like }}
+						<span><img src="http://i.imgur.com/seWtRZc.png" alt=""></span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</li>
