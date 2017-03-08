@@ -20,6 +20,7 @@ Route::group(['prefix' => 'user'], function () {
 	Route::post('add-user-by-phonenumber', 'Front\UserController@AddUserByPhoneNumber')->name('add-user-by-phonenumber');
 	Route::get('logout', 'Front\UserController@LogOutUser')->name('logout-user');
 	Route::post('login', 'Front\UserController@LoginUser')->name('login-user');
+	Route::get('check-login', 'Front\UserController@CheckLogin');
 });
 
 Route::group(['prefix' => 'collection'], function () {
@@ -31,8 +32,6 @@ Route::group(['prefix' => 'product'], function () {
 	Route::get('discount-product', 'Front\ProductController@GetDiscountProducts');
 	Route::get('tendency-product', 'Front\ProductController@GetTendencyProducts');
 });
-Route::get('test', 'Front\UserController@CheckExistUserPhoneNumber');
-Route::get('add-user-by-phonenumber', 'Front\UserController@AddUserByPhoneNumber');
 
 Auth::routes();
 

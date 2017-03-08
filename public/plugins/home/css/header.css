@@ -430,3 +430,54 @@ label.error {
     background-color: #dd7171;
 }
 /* end login error */
+
+/* alert login */
+.alert-login {
+    width: 484px;
+    position: relative;
+    margin: 0 auto;
+    height: 232px;
+    font-size: 21px;
+    color: white;
+}
+.alert-login-background {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    opacity: 0.90;
+    margin: 0 auto;
+    height: 100%;
+    background-color: #222222;
+}
+.alert-login p {
+    text-align: center;
+}
+.alert-login-logo {
+    padding: 25px 12px 25px;
+}
+.alert-login-logo a{
+    text-align: center;
+    display: block;
+}
+.alert-login-footer {
+    width: 200px;
+    margin-top: 20px !important;
+    margin: 0 auto;
+    font-size: 18px;
+}
+.alert-register {
+    padding: 0;
+}
+.alert-register a {
+    color: #7b7b7b;
+}
+.alert-register:first-child {
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid #7b7b7b;
+}
+.alert-register:nth-child(2) {
+    text-align: left;
+    padding-left: 10px;
+}
+/* end alert login */

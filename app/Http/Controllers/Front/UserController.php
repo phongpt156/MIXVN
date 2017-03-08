@@ -70,4 +70,13 @@ class UserController extends Controller
         }
         return back()->withInput()->with('login-status', 'false');
     }
+
+    public static function CheckLogin()
+    {
+        if(Auth::check())
+        {
+            return 1;
+        }
+        return 0;
+    }
 }

@@ -89,6 +89,7 @@
 			Slide.init();
 			User.init();
 			Product.init();
+			Product.action();
 		});
 	</script>
 @endsection
