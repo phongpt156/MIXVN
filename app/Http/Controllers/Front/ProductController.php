@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\BLL\Front\ProductBLL;
 
 class ProductController extends Controller
 {

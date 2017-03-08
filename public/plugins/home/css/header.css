@@ -33,19 +33,12 @@ header a:hover {
 	width: 56px;
 	height: 26px;
 }
-.register-user {
+.register-user, .user-login {
 	padding-top: 21px !important;
 }
-.user-login {
-	padding-top: 20.3px !important;
-}
-.register-user > img{
+.register-user > img, .user-login > img{
 	width: 15px;
 	height: 20px;
-}
-.user-login > img{
-	width: 13px;
-	height: 17px;
 }
 .top-nav {
 	margin-bottom: 0;

@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/header.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/homepage-body.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/slide.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/fonts/font-awesome.min.css') }}"/>
+
 <script src="{{ asset('plugins/home/js/header.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/home/js/homepage.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/home/js/jssor.slider-22.2.10.min.js') }}" type="text/javascript" charset="utf-8"></script>
@@ -18,13 +20,6 @@
 	<div class="homepage-body">
 		<div class="slide-container">
 			<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:440px;overflow:hidden;visibility:hidden;">
-	        	<!-- Loading Screen -->
-		        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
-		            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;">
-		            </div>
-		            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;">
-		            </div>
-		        </div>
 		        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:440px;overflow:hidden;">
 		            <div>
 		                <a href="" title=""><img data-u="image" src="https://s17.postimg.org/xdtdgrevj/bener_1.jpg" /></a>
@@ -58,6 +53,7 @@
 				    	</button>
 						<div class="collection-container">
 							<ul class="navbar-collapse collapse collection-list-item nav nav-bar">
+								<li class="collection-link-container"><a href="" title="" class="collection-link">Bộ sưu tập<i class="fa fa-angle-right"></i></a></li>
 								@include('front.collection.collection-list', ['collections' => $collections])
 							</ul>
 						</div>
@@ -71,10 +67,10 @@
 								
 								</div>
 								<ul class="nav navbar-nav">
-									<li class="active product-navigation-item"><a href="javascript:void(0)" title="" product-type="newest"><p>Mới nhất</p></a></li>
-									<li class="product-navigation-item"><a href="javascript:void(0)" title="" product-type="mostlike"><p>Thích nhiều nhất</p></a></li>
-									<li class="product-navigation-item"><a href="javascript:void(0)" title="" product-type="discount"><p>Sale</p></a></li>
-									<li class="product-navigation-item"><a href="javascript:void(0)" title="" product-type="tendency"><p>Xu hướng</p></a></li>
+									<li class="active product-navigation-item" product-type="newest"><a href="javascript:void(0)" title=""><p>Mới nhất</p></a></li>
+									<li class="product-navigation-item" product-type="mostlike"><a href="javascript:void(0)" title=""><p>Thích nhiều nhất</p></a></li>
+									<li class="product-navigation-item" product-type="discount"><a href="javascript:void(0)" title=""><p>Sale</p></a></li>
+									<li class="product-navigation-item" product-type="tendency"><a href="javascript:void(0)" title=""><p>Xu hướng</p></a></li>
 								</ul>
 							</div>
 						</div>
@@ -92,6 +88,7 @@
 		$(document).ready(function() {
 			Slide.init();
 			User.init();
+			Product.init();
 		});
 	</script>
 @endsection

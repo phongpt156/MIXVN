@@ -52,14 +52,14 @@
             </li>
             @else
 			<li>
-				<a href="javascript:void(0)" title="" class="register-user" data-toggle="modal" data-target="#register-box"><img src="http://i.imgur.com/JDTpXUG.png" alt="MIX-register">
+				<a href="javascript:void(0)" title="" class="register-user" data-toggle="modal" data-target="#register-box"><img src="https://s28.postimg.org/v94oyygkd/register.png" alt="MIX-register">
 				</a>
 				<div class="modal fade" id="register-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	                @include('layouts.register-form')
 	            </div>
 			</li>
             <li>
-            	<a href="" title="" class="user-login" data-toggle="modal" data-target="#login-box"><img src="http://i.imgur.com/XiBWZuO.png" alt="MIX-login"></a>
+            	<a href="" title="" class="user-login" data-toggle="modal" data-target="#login-box"><img src="https://s14.postimg.org/rw51ro84h/login.png" alt="MIX-login"></a>
             	<div class="modal fade" id="login-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	                @include('layouts.login-form')
 	            </div>
