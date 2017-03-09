@@ -58,7 +58,7 @@
 /* end collection aside */
 
 /* product navigation*/
-.liked {
+.action-status {
 	background-color: #000;
 }
 .product-show {
@@ -142,7 +142,7 @@
 	display: inline-block;
 }
 .product-card {
-	padding: 5px;
+	padding: 3px;
 }
 .product-image-container {
 	text-align: center;

@@ -73,6 +73,28 @@ $(document).ready(function() {
 	    			}
 	    		}
 		    });
+		    $(".phone-number-login-form").validate({
+		    	rules: {
+		    		phonenumber_login: {
+		    			required: true,
+		    			vn_phonenumber: true
+		    		},
+		    		password_login: {
+		    			required: true,
+		    			minlength: 8
+		    		}
+		    	},
+		    	messages: {
+	    			phonenumber_login: {
+	    				required: "Nhập số điện thoại",
+	    				vn_phonenumber: "Số điện thoại không hợp lệ"
+	    			},
+	    			password_login: {
+	    				required: "Nhập mật khẩu",
+	    				minlength: "Mật khẩu phải từ 8 ký tự trở lên"
+	    			}
+	    		}
+		    });
 		    $(".phone-login").on("click", function(){
 		        $(".gmail-login").toggle();
 		        $(".phone-number-login-box").toggle();

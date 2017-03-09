@@ -21,6 +21,7 @@ Route::group(['prefix' => 'user'], function () {
 	Route::get('logout', 'Front\UserController@LogOutUser')->name('logout-user');
 	Route::post('login', 'Front\UserController@LoginUser')->name('login-user');
 	Route::get('check-login', 'Front\UserController@CheckLogin');
+	Route::get('like-product', 'Front\UserController@LikeProduct');
 });
 
 Route::group(['prefix' => 'collection'], function () {

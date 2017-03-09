@@ -79,4 +79,12 @@ class UserController extends Controller
         }
         return 0;
     }
+
+    public static function LikeProduct()
+    {
+        if(UserController::CheckLogin())
+        {
+            
+        }
+    }
 }

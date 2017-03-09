@@ -1,7 +1,12 @@
 $(document).ready(function () {
 	window.Product = {
 		init: function() {
+			var productTypeRequest = false;
 			$(".product-navigation-item").on("click", function () { /* Hiển thị kiểu sản phẩm mới nhất, nhiều like nhất ...*/
+				if(productTypeRequest) {
+					return;
+				}
+				productTypeRequest = true;
 				$(".product-item").remove();
 				var url = $(this).attr("product-type");
 				$(".product-navigation-item").each(function () {
@@ -40,6 +45,9 @@ $(document).ready(function () {
 						}
 						$(".product-loading-image").remove();
 						/* end load thêm sản phẩm khi còn chỗ*/
+					},
+					complete: function () {
+						productTypeRequest = false;
 					}
 				});
 			});
@@ -67,11 +75,15 @@ $(document).ready(function () {
 			/* end load thêm sản phẩm khi còn chỗ*/
 			/* Load thêm sản phẩm khi scroll */
 			$(".product-list-item-container").on("scroll", function () {
+				var product_item_scroll = $(this);
 				if($(".product-list-item-container").scrollTop() >= $(".product-list-item").height() - $(".product-list-item-container").height()) {
 					if($(".product-current-page").last().text() !== $(".product-last-page").last().text()) {
 					url = $(".product-next-page-url").last().text();
+					if(product_item_scroll.data("loadMoreProductRequest")) {
+						return;
+					}
+					product_item_scroll.data("loadMoreProductRequest", true);
 					$.ajax({
-						async: false,
 						url: url,
 						type: "GET",
 						dataType: "html",
@@ -81,6 +93,9 @@ $(document).ready(function () {
 						success: function (data) {
 							$(".product-loading-image").remove();
 							$(".product-list-item").append(data);
+						},
+						complete: function () {
+							product_item_scroll.data("loadMoreProductRequest", false);
 						}
 					});
 				}
@@ -89,26 +104,53 @@ $(document).ready(function () {
 			/* End Load thêm sản phẩm khi scroll */
 		},
 		action: function () {
-			$(document).on("click", ".user-product-action > ul > li", function () {
+            $(document).on('hidden.bs.modal', '#alert-login-modal', function () {
+        		$("#alert-login-modal").remove();
+        		$(".mix-container").removeClass("blur");
+        	});
+			$(document).on("click", ".user-product-action > ul > li", function (e) {
+				var action_status = $(this).attr("class").search("action-status");
+				var product_object = $(this);
+				var type_action = $(this).attr("action");
+				if(product_object.data('requestRunning')) {
+					return;
+				}
+				product_object.data('requestRunning', true);
 				$.ajax({
 					url: "/user/check-login",
 					type: "GET",
 					dataType: "json",
 					success: function (login_status) {
-						if(!login_status) {
+						if(!login_status) { /* Nếu chưa login thì hiển thị yêu cầu login*/ 
 							$(".mix-container").addClass("blur");
 							var html = '<div class="modal fade" id="alert-login-modal"><div class="modal-dialog" role="document" id=""><div class="alert-login"><div class="alert-login-background"></div><div class="alert-login-logo"><a href="" title=""><img src="http://i.imgur.com/qwR1IG9.png" alt=""></a></div><p>Đăng nhập ngay để được cập nhật những item mới nhất theo sở thích của bạn nhé</p><div class="alert-login-footer row"><div class="alert-register col-xs-6"><a href="" title="">Đăng ký</a></div><div class="alert-register col-xs-6"><a href="" title="">Đăng nhập</a></div></div></div></div></div>';
-							$("body").prepend(html);
+							$("body").append(html);
 							$("#alert-login-modal").modal({
-			                    show: true,
-			                    keyboard: 'static',
-			                    backdrop: true
-			                });
-			                $("#alert-login-modal").on('hidden.bs.modal', function () {
-		                		$("#alert-login-modal").remove();
-		                		$(".mix-container").removeClass("blur");
-		                	});
+				                show: true,
+				                keyboard: 'static',
+				                backdrop: true
+				            });
 						}
+						else { /* Nếu đã login */
+							if(action_status == -1) {
+								product_object.addClass("action-status");
+							}
+							else {
+								product_object.removeClass("action-status");
+							}
+							switch(type_action) {
+								case "like-product" : {
+									var url = "/user/like-product";
+								}
+							}
+							$.ajax({
+								url: url,
+								type: 'GET'
+							});
+						}
+					},
+					complete: function () {
+						product_object.data('requestRunning', false);
 					}
 				})
 			});	
