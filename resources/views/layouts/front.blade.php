@@ -25,6 +25,9 @@
 	</style>
 </head>
 <body>
+	@if(!Auth::check())
+		@include('layouts.alert-login')
+	@endif
 	<div class="container-fluid mix-container">
     	@yield('content')
 	</div>

@@ -105,73 +105,63 @@ $(document).ready(function () {
 		},
 		action: function () {
             $(document).on('hidden.bs.modal', '#alert-login-modal', function () {
-        		$("#alert-login-modal").remove();
         		$(".mix-container").removeClass("blur");
         	});
+        	var user_like_request = false;
 			$(document).on("click", ".user-product-action > ul > li", function (e) {
-				var action_status = $(this).attr("class").search("action-status");
-				var product_object = $(this);
-				var type_action = $(this).attr("action");
-				if(product_object.data('requestRunning')) {
-					return;
+				if($('#alert-login-modal').length > 0) {
+					$(".mix-container").addClass("blur");
+					$("#alert-login-modal").modal({
+		                show: true,
+		                keyboard: 'static',
+		                backdrop: true
+		            });
 				}
-				product_object.data('requestRunning', true);
-				$.ajax({
-					url: "/user/check-login",
-					type: "GET",
-					dataType: "json",
-					success: function (login_status) {
-						if(!login_status) { /* Nếu chưa login thì hiển thị yêu cầu login*/ 
-							$(".mix-container").addClass("blur");
-							var html = '<div class="modal fade" id="alert-login-modal"><div class="modal-dialog" role="document" id=""><div class="alert-login"><div class="alert-login-background"></div><div class="alert-login-logo"><a href="" title=""><img src="http://i.imgur.com/qwR1IG9.png" alt=""></a></div><p>Đăng nhập ngay để được cập nhật những item mới nhất theo sở thích của bạn nhé</p><div class="alert-login-footer row"><div class="alert-register col-xs-6"><a href="" title="">Đăng ký</a></div><div class="alert-register col-xs-6"><a href="" title="">Đăng nhập</a></div></div></div></div></div>';
-							$("body").append(html);
-							$("#alert-login-modal").modal({
-				                show: true,
-				                keyboard: 'static',
-				                backdrop: true
-				            });
-						}
-						else { /* Nếu đã login */
-							switch(type_action)
-							{
-								case "like-product" : {
-									var url = "/user/like-product";
-									var product_id = product_object.attr("product-id");
-									if(action_status === -1) {
-										var sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html();
-										++sum_like;
-									}
-									else {
-										var sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html();
-										--sum_like;
-									}
-									$(".product-sum-like > div[product-id='" + product_id + "']").html(sum_like);
-								}
-							}
+				else {
+					var product_object = $(this);
+					if(user_like_request) {
+						return;
+					}
+					user_like_request = true;
+					var action_status = $(this).attr("class").search("action-status");
+					var type_action = $(this).attr("action");
+					switch(type_action)
+					{
+						case "like-product" : {
+							var url = "/user/like-product";
+							var product_id = product_object.attr("product-id");
 							if(action_status === -1) {
-								product_object.addClass("action-status");
+								var sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html();
+								++sum_like;
 							}
 							else {
-								product_object.removeClass("action-status");
+								var sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html();
+								--sum_like;
 							}
-							$.ajax({
-								async: false,
-								url: url,
-								type: 'GET',
-								data: {
-									product_id: product_id
-								},
-								dataType: 'json',
-								success: function (data) {
-									sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html(data);
-								}
-							});
+							$(".product-sum-like > div[product-id='" + product_id + "']").html(sum_like);
 						}
-					},
-					complete: function () {
-						product_object.data('requestRunning', false);
 					}
-				})
+					if(action_status === -1) {
+						product_object.addClass("action-status");
+					}
+					else {
+						product_object.removeClass("action-status");
+					}
+					$.ajax({
+						url: url,
+						type: 'GET',
+						data: {
+							product_id: product_id
+						},
+						dataType: 'json',
+						success: function (data) {
+							sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html(data);
+						},
+						complete: function () {
+							user_like_request = false;
+						}
+					});
+				}
 			});	
 		}
 	};

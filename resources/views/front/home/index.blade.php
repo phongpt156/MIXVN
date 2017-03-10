@@ -89,6 +89,7 @@
 			Slide.init();
 			User.init();
 			Product.init();
+			SearchTagging.init();
 			Product.action();
 		});
 	</script>

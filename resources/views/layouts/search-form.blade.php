@@ -1,5 +1,8 @@
 {!! Form::open(['url' => '', 'class' => 'search-form'])!!}
 	<div class="search-tagging">
+		<div class="list-tagging-container">
+				
+		</div>
 		{!!
 			Form::text(
 				'',
@@ -10,7 +13,7 @@
 			)
 		!!}
 	</div>
-	<div class="search-icon">
+	<a class="search-icon">
 		<img src="http://i.imgur.com/lga22vW.png" alt="">
-	</div>
+	</a>
 {!! Form::close() !!}

@@ -106,5 +106,15 @@ $(document).ready(function() {
 	        	$(".login-form-container").removeClass("login-height");
 	        });
 		}
-	}
+	};
+
+	window.SearchTagging = {
+		init: function () {
+			$('.search-element').on('click', function (event) {
+				event.preventDefault();
+				console.log($(this).attr('value'));
+				$('.list-tagging-container').append('<div class="tag-item">' + '</div>');
+			});
+		}
+	};
 });

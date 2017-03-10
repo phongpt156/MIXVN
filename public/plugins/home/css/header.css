@@ -93,7 +93,8 @@ header a:hover {
 	border-bottom: 1px solid white;
 }
 .search-tagging {
-	width: calc(100% - 24px);
+	width: calc(100% - 20px);
+    display: flex;
 }
 .search-tagging input[type="text"] {
 	width: 100% ;
@@ -106,7 +107,7 @@ header a:hover {
 }
 .search-icon {
 	top: -5px;
-	right: 3px;
+	right: 0;
 	position: absolute;
 }
 .search-icon:hover {
@@ -455,6 +456,7 @@ label.error {
 .alert-login-logo {
     padding: 25px 12px 25px;
 }
+input[]
 .alert-login-logo a{
     text-align: center;
     display: block;
