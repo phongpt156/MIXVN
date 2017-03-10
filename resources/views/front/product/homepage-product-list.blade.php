@@ -10,15 +10,15 @@
 					<ul class="row">
 						@if(isset($list_product_user_like))
 							@if(in_array($value->p_id, $list_product_user_like))
-								<li class="col-xs-4 action-status" action="like-product"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
+								<li class="col-xs-4 action-status" action="like-product" product-id="{{ $value->p_id }}"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
 							@else
-								<li class="col-xs-4" action="like-product"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
+								<li class="col-xs-4" action="like-product" product-id="{{ $value->p_id }}"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
 							@endif
 						@else
-							<li class="col-xs-4" action="like-product"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
+							<li class="col-xs-4" action="like-product" product-id="{{ $value->p_id }}"><a href="javascript:void(0)" title=""><img src="http://i.imgur.com/LjwCZFM.png" alt=""></a></li>
 						@endif
-						<li class="col-xs-4"><a href="javascript:void(0)" title="" data-toggle="tooltip"><img src="http://i.imgur.com/O7whI4a.png" alt=""></a></li>
-						<li class="col-xs-4" title="abc"><a href="javascript:void(0)" title=""><img src="https://s10.postimg.org/eaem2xss9/ghim.png" alt=""></a></li>
+						<li class="col-xs-4" product-id="{{ $value->p_id }}"><a href="javascript:void(0)" title="" data-toggle="tooltip"><img src="http://i.imgur.com/O7whI4a.png" alt=""></a></li>
+						<li class="col-xs-4" title="" product-id="{{ $value->p_id }}"><a href="javascript:void(0)" title=""><img src="https://s10.postimg.org/eaem2xss9/ghim.png" alt=""></a></li>
 					</ul>
 				</div>
 			</div>
@@ -34,7 +34,7 @@
 						<a href="" title="">{{ $value->p_price }}</a>
 					</div>
 					<div class="product-sum-like">
-						{{ $value->p_like }}
+						<div product-id="{{ $value->p_id }}">{{ $value->p_like }}</div>
 						<span class="fa fa-heart"></span>
 					</div>
 				</div>

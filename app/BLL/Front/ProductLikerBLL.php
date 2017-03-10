@@ -10,4 +10,9 @@ class ProductLikerBLL
 	{
 		return ProductLikerDAL::GetListProductUserLike($user_id);
 	}
+
+	public static function LikeProduct($product_id, $user_id)
+	{
+		return ProductLikerDAL::LikeProduct($product_id, $user_id);
+	}
 }

@@ -132,20 +132,39 @@ $(document).ready(function () {
 				            });
 						}
 						else { /* Nếu đã login */
-							if(action_status == -1) {
+							switch(type_action)
+							{
+								case "like-product" : {
+									var url = "/user/like-product";
+									var product_id = product_object.attr("product-id");
+									if(action_status === -1) {
+										var sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html();
+										++sum_like;
+									}
+									else {
+										var sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html();
+										--sum_like;
+									}
+									$(".product-sum-like > div[product-id='" + product_id + "']").html(sum_like);
+								}
+							}
+							if(action_status === -1) {
 								product_object.addClass("action-status");
 							}
 							else {
 								product_object.removeClass("action-status");
 							}
-							switch(type_action) {
-								case "like-product" : {
-									var url = "/user/like-product";
-								}
-							}
 							$.ajax({
+								async: false,
 								url: url,
-								type: 'GET'
+								type: 'GET',
+								data: {
+									product_id: product_id
+								},
+								dataType: 'json',
+								success: function (data) {
+									sum_like = $(".product-sum-like > div[product-id='" + product_id + "']").html(data);
+								}
 							});
 						}
 					},

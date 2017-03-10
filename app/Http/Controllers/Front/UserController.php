@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterUserRequest;
 use App\Http\Requests\LoginUserRequest;
 use App\BLL\Front\UserBLL;
+use App\BLL\Front\ProductLikerBLL;
+use App\BLL\Front\ProductBLL;
 use Socialite;
 
 class UserController extends Controller
@@ -84,7 +86,21 @@ class UserController extends Controller
     {
         if(UserController::CheckLogin())
         {
-            
+            $product_id = $_GET['product_id'] ?? NULL;
+            $user_id = Auth::id();
+            if($product_id === NULL || $user_id === NULL)
+            {
+               return;
+            }
+            if(ProductLikerBLL::LikeProduct($product_id, $user_id)) // Nếu like thành công thì thêm like
+            {
+                $action = 'add';
+            }
+            else
+            {
+                $action = 'remove';
+            }
+            return ProductBLL::UpdateLikeNumber($product_id, $action); 
         }
     }
 }

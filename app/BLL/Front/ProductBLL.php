@@ -25,4 +25,9 @@ class ProductBLL
 	{
 		return ProductDAL::GetDiscountProducts($number);
 	}
+
+	public static function UpdateLikeNumber($product_id, $action)
+	{
+		return ProductDAL::UpdateLikeNumber($product_id, $action);
+	}
 }

@@ -48,4 +48,31 @@ class ProductDAL
 								->paginate($number);
 		return $products->withPath('product/tendency-product');
 	}
+
+	public static function GetLikeNumberOfProduct($product_id)
+	{
+		$like_number = DB::table('product')
+						->where([
+							['id', '=', $product_id]
+						])
+						->pluck('like')
+						->first();
+		return $like_number;
+	}
+	public static function UpdateLikeNumber($product_id, $action)
+	{
+		$like_number = ProductDAL::GetLikeNumberOfProduct($product_id);
+		if($action === 'add')
+		{
+			++$like_number;
+		}
+		else
+		{
+			--$like_number;
+		}
+		DB::table('product')
+			->where('id', '=', $product_id)
+			->update(['like' => $like_number]);
+		return $like_number;
+	}
 }

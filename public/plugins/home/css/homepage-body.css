@@ -225,6 +225,9 @@
 .product-sum-like {
     float: right;
 }
+.product-sum-like > div {
+	display: inline-block;
+}
 /* end product item */
 @media (min-width: 1200px) {
 	.product-navigation-item > a {
