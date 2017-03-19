@@ -103,6 +103,8 @@ $(document).ready(function () {
 			});
 			/* End Load thêm sản phẩm khi scroll */
 		},
+
+		// Like buy ghim sản phẩm 
 		action: function () {
             $(document).on('hidden.bs.modal', '#alert-login-modal', function () {
         		$(".mix-container").removeClass("blur");
@@ -139,6 +141,7 @@ $(document).ready(function () {
 								--sum_like;
 							}
 							$(".product-sum-like > div[product-id='" + product_id + "']").html(sum_like);
+							break;
 						}
 					}
 					if(action_status === -1) {
@@ -163,6 +166,32 @@ $(document).ready(function () {
 					});
 				}
 			});	
+		},
+
+		// Hiển thị thông tin chi tiết sản phẩm
+		detail: function () {
+			$(document).on('hidden.bs.modal', '#product-detail-card', function () {
+        		$(".mix-container").removeClass("blur");
+        	});
+			$(document).on('click', '.product-image', function () {
+				var target = $(this);
+				var product_id = $(this).attr("product-id");
+				$.ajax({
+					url: '/product/detail-product-info',
+					type: 'GET',
+					data: {
+						product_id: product_id
+					},
+					success: function (data) {
+						target.append(data);
+						$("#product-detail-card").modal({
+			                show: true,
+			                keyboard: 'static',
+			                backdrop: true
+			            });
+					}
+				});
+			});
 		}
 	};
 });

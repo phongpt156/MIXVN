@@ -53,7 +53,7 @@
 				    	</button>
 						<div class="collection-container">
 							<ul class="navbar-collapse collapse collection-list-item nav nav-bar">
-								<li class="collection-link-container"><a href="" title="" class="collection-link">Bộ sưu tập<i class="fa fa-angle-right"></i></a></li>
+								<li class="collection-link-container"><a href="" title="" class="collection-link">Bộ sưu tập<i class="fa fa-angle-down"></i></a></li>
 								@include('front.collection.collection-list', ['collections' => $collections])
 							</ul>
 						</div>
@@ -91,6 +91,7 @@
 			Product.init();
 			SearchTagging.init();
 			Product.action();
+			Product.detail();
 		});
 	</script>
 @endsection

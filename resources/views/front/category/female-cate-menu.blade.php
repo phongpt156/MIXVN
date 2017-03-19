@@ -12,7 +12,7 @@
 				if($sub_id ==0) echo '<ul class="dropdown-menu nav-justified list-cate-item">';
 				else echo '<ul class="nav nav-bar sub-list-cate-item">';
 				foreach($tmp as $item) {
-					echo '<li class="cate-item"><a value="" href="" title="" class="search-element">' . $item->name . '</a>';
+					echo '<li class="cate-item"><a value="' . $item->name . '" href="" title="" class="search-element">' . $item->name . '</a>';
 					ShowFemaleMenuCategory($categories, $item->id);
 					echo '</li>';
 				}

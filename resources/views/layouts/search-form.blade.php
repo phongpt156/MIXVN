@@ -1,19 +1,26 @@
-{!! Form::open(['url' => '', 'class' => 'search-form'])!!}
+{!! Form::open(['route' => 'search-product', 'class' => 'search-form', 'method' => 'get'])!!}
 	<div class="search-tagging">
 		<div class="list-tagging-container">
 				
 		</div>
-		{!!
-			Form::text(
-				'',
-				'',
-				[
-					'placeholder' => 'Nhập hoặc chọn "Từ Khóa" bên dưới để tìm sản phẩm'
-				]
-			)
-		!!}
+		<div class="input-search-container">
+			{!!
+				Form::text(
+					'product_name',
+					'',
+					[
+						'placeholder' => 'Nhập hoặc chọn "Từ Khóa" bên dưới để tìm sản phẩm'
+					]
+				)
+			!!}
+			{!!
+				Form::submit(
+					'',
+					[
+						'class' => 'search-icon'
+					]
+				)
+			!!}
+		</div>
 	</div>
-	<a class="search-icon">
-		<img src="http://i.imgur.com/lga22vW.png" alt="">
-	</a>
 {!! Form::close() !!}

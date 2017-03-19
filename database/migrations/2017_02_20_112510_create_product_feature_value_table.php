@@ -18,7 +18,8 @@ class CreateProductFeatureValueTable extends Migration
             $table->increments('id');
             $table->integer('product_id');
             $table->integer('feature_id');
-            $table->string('feature_value');
+            $table->string('vn_value');
+            $table->string('other_value')->nullable();
             $table->timestamps();
         });
     }

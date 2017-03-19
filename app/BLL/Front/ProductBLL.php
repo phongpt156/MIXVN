@@ -30,4 +30,9 @@ class ProductBLL
 	{
 		return ProductDAL::UpdateLikeNumber($product_id, $action);
 	}
+
+	public static function GetOneProductInfo($product_id)
+	{
+		return ProductDAL::GetOneProductInfo($product_id);
+	}
 }

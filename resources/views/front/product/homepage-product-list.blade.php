@@ -2,8 +2,8 @@
 	@foreach($products as $key => $value)
 	<li class="product-item">
 		<div class="product-card">
-			<div class="product-image-container" product-id="{{ $value->p_id }}">
-				<div class="product-image">
+			<div class="product-image-container">
+				<div class="product-image" product-id="{{ $value->p_id }}">
 					<img src="{{ $value->p_i_name }}" alt="">
 				</div>
 				<div class="user-product-action">

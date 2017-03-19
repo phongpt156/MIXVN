@@ -90,33 +90,72 @@ header a:hover {
 }
 .search-form {
 	position: relative;
+    color: #fff;
 	border-bottom: 1px solid white;
 }
 .search-tagging {
 	width: calc(100% - 20px);
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
     display: flex;
 }
+.list-tagging-container {
+    float: left;
+    display: flex;
+}
+.tag-item {
+    text-transform: capitalize;
+    padding: 0 5px;
+    margin: 0 3px;
+    color: #333;
+    background-color: #e4e4e4;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+.tag-item > div {
+    display: inline-block;
+}
+.tag-item > div:first-child {
+    margin-right: 5px;
+}
+.remove-tag-item {
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+.remove-tag-item:hover {
+    color: #333;
+}
+.input-search-container {
+    position: relative;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+}
 .search-tagging input[type="text"] {
-	width: 100% ;
+    width: 100%;
 	padding: 0 0 0 5px;
 	outline: none;
-	font-style: italic;
-	color: #fff;
-	background: transparent;
+    font-style: italic;
 	border: none;
+    background: transparent;
 }
 .search-icon {
-	top: -5px;
-	right: 0;
+    width: 18px;
+	top: 0;
+	right: -20px;
 	position: absolute;
-}
-.search-icon:hover {
-	cursor: pointer;
+    padding: 0;
+    outline: none;
+    height: 18px;
+    border: none;
+    background: url('http://i.imgur.com/lga22vW.png') no-repeat center;
 }
 /* end search-form */
 .bottom-nav {
 	padding: 0;
-	opacity: 0.87;
+	opacity: 0.95;
 	background-color: #212121;
 }
 .bottom-nav > li > a {
@@ -454,6 +493,7 @@ label.error {
     text-align: center;
 }
 .alert-login-logo {
+    text-align: center;
     padding: 25px 12px 25px;
 }
 input[]

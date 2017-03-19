@@ -75,4 +75,13 @@ class ProductDAL
 			->update(['like' => $like_number]);
 		return $like_number;
 	}
+
+	public static function GetOneProductInfo($product_id) 
+	{
+		$product = ProductDAL::ProductInstance()
+								->addSelect('s.address as s_address' )
+								->where('p.id', '=', $product_id)
+								->first();
+		return $product;
+	}
 }

@@ -112,8 +112,35 @@ $(document).ready(function() {
 		init: function () {
 			$('.search-element').on('click', function (event) {
 				event.preventDefault();
-				console.log($(this).attr('value'));
-				$('.list-tagging-container').append('<div class="tag-item">' + '</div>');
+				var item = $(this).parent().attr("class");
+				var value = $(this).attr("value");
+				var tag_number = $('.tag-item').length;
+				++tag_number;
+				switch(item) {
+					case 'cate-item' : {
+						if($('.tag-item[item="cate-item"]').length > 0) {
+							$('.tag-item[item="cate-item"]').remove();
+						}
+						$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" item="cate-item"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item">x</div><input type="hidden" value="' + value + '" name="' + item + '"/></div>');
+						break;
+					}
+					case 'color-item' : {
+						$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" ><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item">x</div><input type="hidden" value="' + value + '" name="color-item[' + tag_number + ']"/></div>');
+						break;
+					}
+					case 'feature-item' : {
+						$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" ><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item">x</div><input type="hidden" value="' + value + '" name="feature-item[' + tag_number + ']"/></div>');
+						break;
+					}
+				}
+			});
+			$(document).on('click', '.remove-tag-item', function () {
+				var stt = $(this).attr('stt');
+				$('.tag-item').each( function () {
+					if($(this).attr('stt') === stt) {
+						$(this).remove();
+					}
+				});
 			});
 		}
 	};

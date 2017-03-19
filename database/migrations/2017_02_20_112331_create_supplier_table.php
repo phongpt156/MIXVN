@@ -19,6 +19,7 @@ class CreateSupplierTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone_number')->nullable();
+            $table->string('facebook_link')->nullable();
             $table->time('open_time')->nullable();
             $table->time('close_time')->nullable();
             $table->timestamps();
