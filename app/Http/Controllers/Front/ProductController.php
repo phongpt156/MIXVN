@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\BLL\Front\ProductBLL;
 use App\BLL\Front\ProductFeatureValueBLL;
 use App\BLL\Front\CollectionProductXrefBLL;
+use App\DAL\ProductDAL;
 
 class ProductController extends Controller
 {

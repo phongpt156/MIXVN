@@ -173,8 +173,15 @@ $(document).ready(function () {
 			$(document).on('hidden.bs.modal', '#product-detail-card', function () {
         		$(".mix-container").removeClass("blur");
         	});
+        	var displayDetailStatus = false;
+        	$("#product-detail-card").modal({
+                show: false,
+                keyboard: 'static',
+                backdrop: true
+            });
 			$(document).on('click', '.product-image', function () {
-				var target = $(this);
+				if(displayDetailStatus) return;
+				displayDetailStatus = true;
 				var product_id = $(this).attr("product-id");
 				$.ajax({
 					url: '/product/detail-product-info',
@@ -183,12 +190,11 @@ $(document).ready(function () {
 						product_id: product_id
 					},
 					success: function (data) {
-						target.append(data);
+						displayDetailStatus = false;
+						$('.product-detail-card').html(data);
 						$("#product-detail-card").modal({
-			                show: true,
-			                keyboard: 'static',
-			                backdrop: true
-			            });
+							show: true
+						});
 					}
 				});
 			});

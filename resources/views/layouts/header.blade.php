@@ -35,7 +35,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
     	</button>
-		<a class="navbar-brand logo-page" href="#"><img src="http://i.imgur.com/qwR1IG9.png" alt="MIX-Shop" class="img-responsive"></a>
+		<a class="navbar-brand logo-page" href=""><img src="http://i.imgur.com/qwR1IG9.png" alt="MIX-Shop" class="img-responsive"></a>
 	</div>
 	<div>
 	<nav class="navbar-collapse collapse nav-header">
@@ -68,7 +68,7 @@
 		</ul>
 	    <ul class="nav navbar-nav navbar-right right-top-nav">
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Trang chủ
+				<a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Trang chủ
                 	<span class="nav-border-icon"><img src="http://i.imgur.com/kcb37oj.png" alt=""></span>
 				</a>
 			</li>

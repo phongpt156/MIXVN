@@ -77,6 +77,15 @@
 						<div class="product-list-item-container">
 							<ul class="product-list-item clearfix">
 								@include('front.product.homepage-product-list', ['products' => $products])
+								<div class="modal fade" id="product-detail-card">
+								    <div class="modal-dialog" role="document" id="">
+								    	<div class="modal-header">
+										    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										    <div class="product-detail-card">
+										    </div>
+										</div>
+								    </div>
+								</div>
 							</ul>
 						</div>
 					</div>

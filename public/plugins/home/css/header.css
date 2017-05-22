@@ -431,6 +431,7 @@ label.error {
 
 .user-avatar-container {
     margin-top: 5px;
+    display: inline-block !important;
     border-radius: 50%;
     background-color: #58595B;
 }
