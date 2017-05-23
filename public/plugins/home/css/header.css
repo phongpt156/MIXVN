@@ -1,4 +1,5 @@
 body {
+    padding: 0 !important;
     letter-spacing: -0.02em;
     font-family: VNF-Stag-Sans-Book;
     color: black;
@@ -267,6 +268,7 @@ header a:hover {
   margin-right: -4px;
 }
 .modal-dialog {
+    width: auto;
 	display: inline-block;
     text-align: left;
     vertical-align: middle;
@@ -436,12 +438,23 @@ label.error {
     background-color: #58595B;
 }
 .user-avatar-container > a {
-    padding-top: 15px !important;
+    padding: 10px !important;
     background-color: transparent !important;
 }
 .user-avatar-container > a > img {
     width: 25px;
     height: 30px;
+}
+.user-avatarfb-container.open > a, .user-avatarfb-container.open > a:hover, .user-avatarfb-container.open > a:focu {
+    background-color: transparent;
+}
+.user-avatarfb-container > a {
+    padding: 5px 0 0 0 !important;
+}
+.user-avatarfb-container > a > img{
+    width: 40px;
+    height: 45px;
+    border-radius: 50%;
 }
 
 /* login error */
@@ -508,18 +521,18 @@ input[]
     margin: 0 auto;
     font-size: 18px;
 }
-.alert-register {
+.alert-register-button , .alert-login-button {
     padding: 0;
 }
-.alert-register a {
+.alert-register-button a, .alert-login-button a {
     color: #7b7b7b;
 }
-.alert-register:first-child {
+.alert-register-button {
     text-align: right;
     padding-right: 10px;
     border-right: 1px solid #7b7b7b;
 }
-.alert-register:nth-child(2) {
+.alert-login-button {
     text-align: left;
     padding-left: 10px;
 }

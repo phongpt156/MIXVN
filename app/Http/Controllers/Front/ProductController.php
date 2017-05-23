@@ -49,8 +49,8 @@ class ProductController extends Controller
 			$product = ProductBLL::GetOneProductInfo($product_id);
 			$product_feature_value = ProductFeatureValueBLL::GetProductFeatureValues($product_id);
 			$feature_name = ProductFeatureValueBLL::GetFeatureName($product_id);
-			$product_collections = CollectionProductXrefBLL::GetProductCollections($product_id);
-			return view('front.product.detail-product-info-card', compact('product', 'product_feature_value', 'feature_name', 'product_collections'));
+			$product_collection = CollectionProductXrefBLL::GetProductCollection($product_id);
+			return view('front.product.detail-product-info-card', compact('product', 'product_feature_value', 'feature_name', 'product_collection'));
 		}
 	}
 }

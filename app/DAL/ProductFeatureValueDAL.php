@@ -13,7 +13,7 @@ class ProductFeatureValueDAL
 		$product_feature_value = DB::table('product_feature_value as p_f_v')
 			->join('feature as f', 'f.id', '=', 'p_f_v.feature_id')
 			->where('p_f_v.product_id', '=', $product_id)
-			->select('f.id as f_id', 'p_f_v.vn_value as p_f_v_vn_value', 'p_f_v.other_value as p_f_v_other_value')
+			->select('p_f_v.feature_id as p_f_v_feature_id', 'p_f_v.vn_value as p_f_v_vn_value', 'p_f_v.other_value as p_f_v_other_value')
 			->get();
 		return $product_feature_value;
 	}

@@ -179,10 +179,14 @@ $(document).ready(function () {
                 keyboard: 'static',
                 backdrop: true
             });
+            $(document).on('hidden.bs.modal', '#product-detail-card', function () {
+        		$(".mix-container").removeClass("blur");
+        	});
 			$(document).on('click', '.product-image', function () {
 				if(displayDetailStatus) return;
 				displayDetailStatus = true;
 				var product_id = $(this).attr("product-id");
+				$(".mix-container").addClass("blur");
 				$.ajax({
 					url: '/product/detail-product-info',
 					type: 'GET',

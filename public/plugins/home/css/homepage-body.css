@@ -259,13 +259,23 @@
 /* end product */
 
 /* detail product info card */
+#product-detail-card .close {
+	top: 0;
+	right: 5px;
+	position: absolute;
+	color: #fff;
+}
 .product-detail-card {
 	width: 600px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #272727;
 }
 .product-detail-card-aside {
 	width: 260px;
 	position: relative;
 	height: 360px;
+	float: left;
 }
 .product-detail-image {
 	height: 100%;
@@ -276,7 +286,7 @@
 	max-width: 100%;
 	max-height: 100%;
 }
-.product-detail-card-footer {
+.product-detail-card-aside-footer {
 	width: 100%;
 	position: absolute;
 	opacity: 0.9;
@@ -284,7 +294,7 @@
 	bottom: 0;
 	background-color: #474747;
 }
-.facebook-icon {
+.product-detail-card-aside-footer .facebook-icon {
 	width: 21px;
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
@@ -293,12 +303,51 @@
 	height: 21px;
 	background-color: #212121;
 }
-.facebook-icon i {
+.product-detail-card-aside-footer .facebook-icon i {
 	transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
-	margin: 6px 0 0 6px;
+	margin: 6px 0 0 7px;
 	font-size: 12px;
 	color: white;
+}
+.product-detail-card-main {
+	width: calc(100% - 260px);
+	padding: 0 0 10px 20px;
+	float: left;
+}
+.product-detail-card-header h3, .product-detail-card-header h4 {
+	text-transform: uppercase;
+}
+.product-detail-card-header h3 {
+	margin: 10px 0 0 0;
+	font-size: 20px;
+	color: #fff;
+}
+.product-detail-card-header a:hover, .product-detail-card-header a:focus {
+	color: #fff;
+}
+.product-detail-card-header h4 {
+	margin: 0 0 10px;
+	font-size: 10px;
+	color: #dedede;
+}
+.product-detail-card-main hr {
+	margin: 0 0 20px 0;
+	border-color: #4e4e4e
+}
+.product-card-feature-item .product-card-feature-name:last-child {
+	font-size: 0;
+}
+.product-card-feature-info p {
+	color: #dedede;
+}
+.product-card-feature-info a {
+	font-size: 14px;
+	color: #dedede;
+}
+.product-detail-card-body-title {
+	margin: 0 0 0 10px;
+	font-size: 15px;
 }
 /* end detail product info card */

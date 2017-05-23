@@ -16,9 +16,11 @@ class CreateUserTable extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->increments('id');
             $table->string('facebook_id')->unique()->nullable();
+            $table->string('facebook_link')->unique()->nullable();
             $table->string('phone_number')->unique();
             $table->string('name')->nullable();
             $table->string('email')->unique()->nullable();
+            $table->string('gender', 6)->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

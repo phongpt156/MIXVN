@@ -41,15 +41,22 @@
 	<nav class="navbar-collapse collapse nav-header">
 		<ul class="nav navbar-nav">
 			@if(Auth::check())
-			<li class="user-avatar-container dropdown">
-                <a href="" title="" class="nav-acount dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><img src="https://s28.postimg.org/wb2qj4h0t/person1.png" alt="MIX-register">
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="" title="">Trang cá nhân</a></li>
-                    <li><a href="" title="">Cập nhật thông tin</a></li>
-                    <li><a href="{{ route('logout-user') }}" title="">Đăng xuất</a></li>
-                </ul>
-            </li>
+				@if(!Auth::user()->avatar)
+					<li class="user-avatar-container dropdown">
+		                <a href="" title="" class="nav-acount dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+		            		<img src="https://s28.postimg.org/wb2qj4h0t/person1.png" alt="">
+		        @else
+	        		<li class="user-avatarfb-container dropdown">
+		                <a href="" title="" class="nav-acount dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+		            		<img src="{{Auth::user()->avatar}}" alt="">
+		                </a>
+		        @endif
+		                <ul class="dropdown-menu">
+		                    <li><a href="" title="">Trang cá nhân</a></li>
+		                    <li><a href="" title="">Cập nhật thông tin</a></li>
+		                    <li><a href="{{ route('logout-user') }}" title="">Đăng xuất</a></li>
+		                </ul>
+		            </li>
             @else
 			<li>
 				<a href="javascript:void(0)" title="" class="register-user" data-toggle="modal" data-target="#register-box"><img src="https://s14.postimg.org/rw51ro84h/login.png" alt="MIX-register">

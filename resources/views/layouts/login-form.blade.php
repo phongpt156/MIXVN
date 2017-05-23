@@ -1,7 +1,7 @@
 <div class="modal-dialog" role="document">
     <div class="login-form-container">
         <div class="facebook-login-container">
-            <a href="{{ url('/facebook/redirect') }}" title=""><img src="http://i.imgur.com/0MmgqMq.jpg" alt=""></a>
+            <a href="{{ url('user/auth/facebook') }}" title=""><img src="http://i.imgur.com/0MmgqMq.jpg" alt=""></a>
         </div>
         @if(Session::has('login-status'))
             @php

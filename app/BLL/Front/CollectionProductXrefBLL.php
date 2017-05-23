@@ -6,8 +6,8 @@ use App\DAL\CollectionProductXrefDAL;
 
 class CollectionProductXrefBLL
 {
-	public static function GetProductCollections($product_id)
+	public static function GetProductCollection($product_id)
 	{
-		return CollectionProductXrefDAL::GetProductCollections($product_id);
+		return CollectionProductXrefDAL::GetProductCollection($product_id);
 	}
 }

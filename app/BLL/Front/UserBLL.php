@@ -1,6 +1,7 @@
 <?php
 
 namespace App\BLL\Front;
+	
 use App\DAL\UserDAL;
 
 class UserBLL
@@ -13,5 +14,10 @@ class UserBLL
 	public static function AddUserByPhoneNumber($phone_number, $password)
 	{
 		return UserDAL::AddUserByPhoneNumber($phone_number, $password);
+	}
+
+	public static function AddUserByFacebook($user)
+	{
+		UserDAL::AddUserByFacebook($user);
 	}
 }

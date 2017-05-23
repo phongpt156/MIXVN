@@ -10,6 +10,7 @@ use App\Http\Requests\LoginUserRequest;
 use App\BLL\Front\UserBLL;
 use App\BLL\Front\ProductLikerBLL;
 use App\BLL\Front\ProductBLL;
+use App\BLL\Front\UserAvatarBLL;
 use Socialite;
 
 class UserController extends Controller
@@ -28,7 +29,8 @@ class UserController extends Controller
     public function HandleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
-        return redirect('/');
+        UserBLL::AddUserByFacebook($user);
+        return back();
         // $user->token;
     }
 

@@ -105,6 +105,16 @@ $(document).ready(function() {
 	        	$(".phone-number-login-box").hide();
 	        	$(".login-form-container").removeClass("login-height");
 	        });
+	        $(".alert-register-button").on('click', function (e) {
+	        	$("#alert-login-modal").modal('hide');
+	        	$("#register-box").modal('show');
+	        	e.preventDefault();
+	        });
+	        $(".alert-login-button").on('click', function (e) {
+	        	$("#alert-login-modal").modal('hide');
+	        	$("#login-box").modal('show');
+	        	e.preventDefault();
+	        });
 		}
 	};
 
