@@ -25,7 +25,7 @@ $(document).ready(function () {
 					},
 					success: function (data) {
 						$(".product-list-item").html(data);
-						/* load thêm sản phẩm khi còn chỗ*/
+						/* load thêm sản phẩm khi còn chỗ*/	
 						var height = $(".product-list-item").innerHeight();
 						var parent_height = $(".product-list-item-container").innerHeight();
 						if(height < parent_height) {
@@ -76,7 +76,7 @@ $(document).ready(function () {
 			/* Load thêm sản phẩm khi scroll */
 			$(".product-list-item-container").on("scroll", function () {
 				var product_item_scroll = $(this);
-				if($(".product-list-item-container").scrollTop() >= $(".product-list-item").height() - $(".product-list-item-container").height()) {
+				if($(".product-list-item-container").scrollTop() >= $(".product-list-item").height() - $(".product-list-item-container").height() - 2) {
 					if($(".product-current-page").last().text() !== $(".product-last-page").last().text()) {
 					url = $(".product-next-page-url").last().text();
 					if(product_item_scroll.data("loadMoreProductRequest")) {

@@ -85,6 +85,9 @@ header a:hover {
 	display: none;
 }
 /* search-form */
+.active-search-tagging {
+    background-color: #7a7777;
+}
 .search-form-container {
 	margin-top: 19px;
 	left: 50%;
