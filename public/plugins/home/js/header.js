@@ -120,6 +120,7 @@ $(document).ready(function() {
 
 	window.SearchTagging = {
 		init: function () {
+			var tag_number = 0;
 			$('.search-element').on('click', function (event) {
 				event.preventDefault();
 
@@ -132,7 +133,7 @@ $(document).ready(function() {
 						}
 					});
 				}
-				
+
 				if($(this).attr('class').search('active-search-tagging') !== -1) {
 
 					var active_value = $(this).attr('value');
@@ -146,22 +147,27 @@ $(document).ready(function() {
 				else {
 					$(this).addClass('active-search-tagging');
 					var value = $(this).attr("value");
-					var tag_number = $('.tag-item').length;
-					++tag_number;
+					var num_search_tag = $('.tag-item').length;
+					if (num_search_tag) {
+						++tag_number;
+					}
+					else {
+						tag_number = 1;
+					}
 					switch(item) {
 						case 'cate-item' : {
 							if($('.tag-item[item="cate-item"]').length > 0) {
 								$('.tag-item[item="cate-item"]').remove();
 							}
-							$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" item="cate-item" value="' + value + '"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item">x</div><input type="hidden" value="' + value + '" name="' + item + '"/></div>');
+							$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" item="cate-item" value="' + value + '"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item" value="' + value + '">x</div><input type="hidden" value="' + value + '" name="' + item + '"/></div>');
 							break;
 						}
 						case 'color-item' : {
-							$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" value="' + value + '"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item">x</div><input type="hidden" value="' + value + '" name="color-item[' + tag_number + ']"/></div>');
+							$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" value="' + value + '"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item" value="' + value + '">x</div><input type="hidden" value="' + value + '" name="color-item[' + tag_number + ']"/></div>');
 							break;
 						}
 						case 'feature-item' : {
-							$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" value="' + value + '"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item">x</div><input type="hidden" value="' + value + '" name="feature-item[' + tag_number + ']"/></div>');
+							$('.list-tagging-container').append('<div class="tag-item" stt="' + tag_number + '" value="' + value + '"><div>' + value + '</div><div stt="' + tag_number + '" class="remove-tag-item" value="' + value + '">x</div><input type="hidden" value="' + value + '" name="feature-item[' + tag_number + ']"/></div>');
 							break;
 						}
 					}
@@ -169,12 +175,17 @@ $(document).ready(function() {
 				
 			});
 			$(document).on('click', '.remove-tag-item', function () {
-				var stt = $(this).attr('stt');
+				var stt = $(this);
 				$('.tag-item').each( function () {
-					if($(this).attr('stt') === stt) {
+					if($(this).attr('stt') === stt.attr('stt')) {
 						$(this).remove();
 					}
 				});
+				$('.search-element').each( function () {
+					if($(this).attr('value') == stt.attr('value')) {
+						$(this).removeClass('active-search-tagging');
+					}
+				})
 			});
 		}
 	};

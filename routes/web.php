@@ -32,10 +32,9 @@ Route::group(['prefix' => 'product'], function () {
 	Route::get('mostlike-product', 'Front\ProductController@GetMostLikeProducts');
 	Route::get('discount-product', 'Front\ProductController@GetDiscountProducts');
 	Route::get('tendency-product', 'Front\ProductController@GetTendencyProducts');
-	Route::get('search-product', 'Front\ProductController@SearchProduct')->name('search-product');
 	Route::get('detail-product-info', 'Front\ProductController@GetDetailProductInfo');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/s_p', 'Front\SearchPageController@index')->name('s_p');

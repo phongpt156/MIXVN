@@ -2,7 +2,7 @@
 	background-color: #1d1c1c;
 }
 .homepage-body {
-    margin-top: 98px;
+    margin-top: 96px;
 }
 .blur {
 	-webkit-filter: blur(5px);
@@ -17,6 +17,8 @@
 	float: left;
 }
 .collection-container {
+	overflow: auto;
+	max-height: 1241px;
 	background-color: #242323;
 }
 .collection-list-item {

@@ -36,17 +36,13 @@ class ProductController extends Controller
 		return view('front.product.homepage-product-list', compact('products'));
 	}
 
-	public static function SearchProduct(Request $request)
-	{
-		dd($request->all());
-	}
-
 	public static function GetDetailProductInfo(Request $request)
 	{
-		$product_id = $request['product_id'] ?? NULL;
-		if($product_id !== NULL)
+		$product_id = $request['product_id'] ?? null;
+		$product_group_id = $request['product_group_id'] ?? null;
+		if(!is_null($product_id) && !is_null($product_group_id))
 		{
-			$product = ProductBLL::GetOneProductInfo($product_id);
+			$product = ProductBLL::GetOneProductInfo($product_id, $product_group_id);
 			$product_feature_value = ProductFeatureValueBLL::GetProductFeatureValues($product_id);
 			$feature_name = ProductFeatureValueBLL::GetFeatureName($product_id);
 			$product_collection = CollectionProductXrefBLL::GetProductCollection($product_id);

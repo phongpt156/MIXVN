@@ -1,3 +1,7 @@
+<?php
+
+//dd(cookie());
+?>
 @extends('layouts.front')
 @section('title')
 - Trang chủ

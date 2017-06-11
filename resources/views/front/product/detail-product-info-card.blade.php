@@ -1,7 +1,7 @@
 @if(isset($product))
 	<div class="product-detail-card-aside">
 		<div class="product-detail-image">
-			<img src="{{ $product->p_i_name }}" alt="">
+			<img src="{{ $product->pg_i_name }}" alt="">
 		</div>
 		<div class="product-detail-card-aside-footer">
 			<div class="facebook-icon">

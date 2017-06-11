@@ -185,18 +185,20 @@ $(document).ready(function () {
 			$(document).on('click', '.product-image', function () {
 				if(displayDetailStatus) return;
 				displayDetailStatus = true;
-				var product_id = $(this).attr("product-id");
+				var product_id = $(this).attr('product-id');
+				var product_group_id = $(this).attr('product-group-id');
 				$(".mix-container").addClass("blur");
 				$.ajax({
 					url: '/product/detail-product-info',
 					type: 'GET',
 					data: {
-						product_id: product_id
+						product_id: product_id,
+						product_group_id: product_group_id
 					},
 					success: function (data) {
 						displayDetailStatus = false;
 						$('.product-detail-card').html(data);
-						$("#product-detail-card").modal({
+						$('#product-detail-card').modal({
 							show: true
 						});
 					}

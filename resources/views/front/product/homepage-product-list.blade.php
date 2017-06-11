@@ -3,8 +3,8 @@
 	<li class="product-item">
 		<div class="product-card">
 			<div class="product-image-container">
-				<div class="product-image" product-id="{{ $value->p_id }}">
-					<img src="{{ $value->p_i_name }}" alt="">
+				<div class="product-image" product-id="{{ $value->p_id }}" product-group-id="{{$value->pg_id}}">
+					<img src="{{ $value->pg_i_name }}" alt="">
 				</div>
 				<div class="user-product-action">
 					<ul class="row">

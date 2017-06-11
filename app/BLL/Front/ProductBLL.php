@@ -6,6 +6,12 @@ use App\DAL\ProductDAL;
 
 class ProductBLL
 {
+	private $productDAL;
+
+	function __construct()
+	{
+		$this->productDAL = new ProductDAL;
+	}
 	public static function GetNewestProducts($number = 16)
 	{
 		return ProductDAL::GetNewestProducts($number);
@@ -31,8 +37,14 @@ class ProductBLL
 		return ProductDAL::UpdateLikeNumber($product_id, $action);
 	}
 
-	public static function GetOneProductInfo($product_id)
+	public static function GetOneProductInfo($product_id, $product_group_id)
 	{
-		return ProductDAL::GetOneProductInfo($product_id);
+		return ProductDAL::GetOneProductInfo($product_id, $product_group_id);
 	}
+
+	public function searchProduct($feature_item, $cate_item, $color_item, $product_name)
+	{
+		$this->productDAL->searchProduct($feature_item, $cate_item, $color_item, $product_name);
+	}
+
 }
