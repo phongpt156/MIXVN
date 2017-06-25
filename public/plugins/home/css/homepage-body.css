@@ -1,16 +1,3 @@
-.mix-container {
-	background-color: #1d1c1c;
-}
-.homepage-body {
-    margin-top: 96px;
-}
-.blur {
-	-webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-}
 /* collecion aside */
 .homepage-aside {
 	padding-top: 90px;

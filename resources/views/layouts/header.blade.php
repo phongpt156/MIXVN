@@ -35,7 +35,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
     	</button>
-		<a class="navbar-brand logo-page" href=""><img src="http://i.imgur.com/qwR1IG9.png" alt="MIX-Shop" class="img-responsive"></a>
+		<a class="navbar-brand logo-page" href="/"><img src="http://i.imgur.com/qwR1IG9.png" alt="MIX-Shop" class="img-responsive"></a>
 	</div>
 	<div>
 	<nav class="navbar-collapse collapse nav-header">

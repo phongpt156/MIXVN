@@ -1,0 +1,36 @@
+.footer {
+	padding: 50px 50px 20px;
+	color: #fff;
+	background-color: #141414;
+}
+.footer p {
+	margin: 0;
+}
+.contact-info {
+	padding-bottom: 50px;
+}
+.contact-info p {
+	padding: 0 10px 0 0;
+	display: inline-block;
+}
+.footer a{
+	color: #fff;
+}
+.social-icon {
+	width: 21px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    margin: 5px 0 0 10px;
+    height: 21px;
+    display: inline-block;
+    background-color: #212121;
+}
+.social-icon i {
+	transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    margin: 6px 0 0 7px;
+    font-size: 12px;
+    color: white;
+}

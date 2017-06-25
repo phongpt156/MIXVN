@@ -1,20 +1,14 @@
-<?php
-
-//dd(cookie());
-?>
 @extends('layouts.front')
 @section('title')
 - Trang chủ
 @endsection
 @section('assets')
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/header.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/homepage-body.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/css/slide.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ asset('plugins/home/fonts/font-awesome.min.css') }}"/>
 
 <script src="{{ asset('plugins/home/js/header.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/home/js/homepage.js') }}" type="text/javascript" charset="utf-8"></script>
-<script src="{{ asset('plugins/home/js/jssor.slider-22.2.10.min.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('plugins/home/js/jssor.slider-24.1.5.min.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/home/js/slide.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/jquery/jquery.validate.min.js') }}" type="text/javascript" charset="utf-8"></script>
 <script src="{{ asset('plugins/jquery/additional-methods.min.js') }}" type="text/javascript" charset="utf-8"></script>
@@ -88,6 +82,7 @@
 			</div>
 		</div>
 	</div>
+	@include('layouts.footer')
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
 			Slide.init();

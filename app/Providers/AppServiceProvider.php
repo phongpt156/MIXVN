@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
-        $header = ['front.home.index'];
+        $header = ['front.home.index', 'front.home.search-page'];
         View::composer($header, function ($view) {
             $categoryBLL = new CategoryBLL;
             $female_cate = $categoryBLL->GetCategoriesByGender('female');

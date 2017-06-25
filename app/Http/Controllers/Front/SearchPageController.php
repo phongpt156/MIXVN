@@ -21,5 +21,7 @@ class SearchPageController extends Controller
 
     	$productBLL = new ProductBLL;
     	$productBLL->searchProduct($feature_item, $cate_item, $color_item, $product_name);
+        if (empty($product_name)) $product_name = 'Váy đỏ dáng xuông'; 
+        return view('front.home.search-page', compact('product_name'));
     }
 }
